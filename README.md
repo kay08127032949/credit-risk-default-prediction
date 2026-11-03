@@ -35,7 +35,7 @@ Three findings drove the modeling decisions below:
 
 The checking-account finding directly shaped feature engineering: since `none` breaks the natural low→high ordering of account balances, it ruled out ordinal encoding in favor of one-hot.
 
-![Checking account status vs. credit risk](images/checking_account_vs_risk.png)
+![Checking account status vs. credit risk](checking_account_vs_risk.png)
 
 ## 3. Feature Engineering
 
@@ -65,7 +65,6 @@ Random Forest had the best ranking power (highest ROC-AUC) but its default 0.5 d
 
 **Final model: Random Forest (300 trees, `class_weight='balanced'`), decision threshold = 0.35** — recall 62.2%, precision 54.9%, F1 0.583, ROC-AUC 0.758.
 
-![Model comparison across baseline, balanced logistic regression, and random forest](Model comparison across baseline, balanced logistic regression, and random forest.png)
 
 ## 5. Explainability (SHAP)
 
@@ -83,7 +82,7 @@ Top features by mean absolute SHAP value:
 
 `Checking account_none` outweighs every other feature by more than 2x, so the model leans on it more than anything else. SHAP importance shows how much a feature matters, not which way it pushes; the direction comes from the EDA above, where applicants with no checking account on record had the lowest bad-risk rate (11.7%). Had that missing data simply been dropped in step 1, the model would have lost its single most informative feature.
 
-![Top 10 features by SHAP importance](images/shap_feature_importance.png)
+![Top 10 features by SHAP importance](shap_feature_importance.png)
 
 ## Limitations & Future Work
 
