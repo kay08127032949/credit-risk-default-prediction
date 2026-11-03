@@ -65,7 +65,7 @@ Random Forest had the best ranking power (highest ROC-AUC) but its default 0.5 d
 
 **Final model: Random Forest (300 trees, `class_weight='balanced'`), decision threshold = 0.35** — recall 62.2%, precision 54.9%, F1 0.583, ROC-AUC 0.758.
 
-![Model comparison across baseline, balanced logistic regression, and random forest](images/model_comparison.png)
+![Model comparison across baseline, balanced logistic regression, and random forest](Model comparison across baseline, balanced logistic regression, and random forest.png)
 
 ## 5. Explainability (SHAP)
 
